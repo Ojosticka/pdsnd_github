@@ -51,23 +51,23 @@ Once this is done, the code asks you for input on what city, month and day of da
 ### Files used
 The files used include the bikeshare.py file which contains the code, data files with the extension(.csv) and a README file which gives details on the project and how it operates.  
 
-..*bikeshare.py
-..*chicago.csv
-..*washington.csv
-..*new_york_city.csv
+*bikeshare.py
+*chicago.csv
+*washington.csv
+*new_york_city.csv
 
 
 ### Functions
 
 A breakdown of the functions used in this project and what each does is given below:  
 
-..*`def get_filters():` Asks user to specify a city, month, and day to analyze.    
+*`def get_filters():` Asks user to specify a city, month, and day to analyze.    
     Returns:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
 
-..*`def load_data(city, month, day):` Loads data for the specified city and filters by month and day if applicable.
+*`def load_data(city, month, day):` Loads data for the specified city and filters by month and day if applicable.
     Args:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
@@ -75,33 +75,33 @@ A breakdown of the functions used in this project and what each does is given be
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
 
-..*`def time_stats(df):` Displays statistics on the most frequent times of travel.   
+*`def time_stats(df):` Displays statistics on the most frequent times of travel.   
     Args: dataframe df
     returns: None  
 
-..*`def station_stats(df):` Displays statistics on the most popular stations and trip.
+*`def station_stats(df):` Displays statistics on the most popular stations and trip.
     Args: dataframe df
     returns: None
 
-..*`def seconds_convert(sec):` Converts data given in seconds to weeks, days, hours, minutes, and seconds
+*`def seconds_convert(sec):` Converts data given in seconds to weeks, days, hours, minutes, and seconds
     Args: Takes in the seconds value to be converted from the trip_duration_stats function(int)
-    returns: The converted output of the argument given.    
+    returns: The converted output of the argument given.      
 
-    The floor operator(//) gives the integer division of a division operation neglecting every number after the decimal point while the modulo operator (%) gives the integer remainder of a division operation. For more understanding of the operators, check out [this link](https://stackoverflow.com/questions/56627393/difference-between-modulus-and-floor-division-in-numpy). 
+The floor operator(//) gives the integer division of a division operation neglecting every number after the decimal point while the modulo operator(%) gives the integer remainder of a division operation. For more understanding of the operators, check out this [link](https://stackoverflow.com/questions/56627393/difference-between-modulus-and-floor-division-in-numpy)
 
-..*`def trip_duration_stats(df):` Displays statistics on the total and average trip duration.
+*`def trip_duration_stats(df):` Displays statistics on the total and average trip duration.
     Args: dataframe df
     returns: None
 
-..*`def user_stats(df):` Displays statistics on bikeshare users.
+*`def user_stats(df):` Displays statistics on bikeshare users.
     Args: dataframe df 
     returns: None
 
-..*`def more_info(df):` Function to ask the user if he wants to see the raw data of the information.
+*`def more_info(df):` Function to ask the user if he wants to see the raw data of the information.
     Args: dataframe df
     returns: None  
 
-..*`def main():` Gets the input data from the user from a function get_filters() and passes the result to the other      functions
+*`def main():` Gets the input data from the user from a function get_filters() and passes the result to the other      functions
     Args: None
     returns: None   
 

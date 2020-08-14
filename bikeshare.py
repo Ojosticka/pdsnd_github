@@ -22,7 +22,7 @@ def get_filters():
     print("\noh wow {}, that\'s such a beautiful name you got there\n".format(name_of_person))
             
             
-    # Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # Get user input for city (chicago, new york city, washington). 
     while True:        
         city = input("Hi {}, what city would you like to check, data is only availaible for the cities: (chicago, new york city, washington),please endeavour to choose from these options, cant choose more than one city at a time: ".format(name_of_person)).lower()
         
@@ -106,12 +106,11 @@ def time_stats(df):
     mode_letter = df['month'].mode()[0]           
     print("\nThe most frequent month is the month of {}".format(mode_letter))
     
-    # Display the most common day of weekp
+    # Display the most common day of week
     frequent_day = df['day_of_week'].mode()[0]
     print("\nThe most frequent day of the week is {}".format(frequent_day))
     
-    # Display the most common start hour
-    # extract hour from the Start Time column to create an hour column
+    # Create hour column from Start Time
     df['hour'] = df['Start Time'].dt.hour
 
     # find the most common hour (from 0 to 23)
@@ -146,11 +145,9 @@ def station_stats(df):
     print('-'*40)
 
 def seconds_convert(sec):
-    """Converts data given in seconds to weeks, days, hours, minutes, and seconds
-        Args: Takes in the seconds value to be converted from the trip_duration_stats function(int)
-        returns: The converted output of the argument given. """
-    
-     #Input given in seconds; convert to years, weeks, days, hour, minute, and seconds format
+    """Converts data given in seconds to years, weeks, days, hours, minutes, and seconds
+        Args: sec(int)
+        returns: The converted output of the argument given. """   
     
     years = sec//(52*7*24*3600)
     sec %= (52*7*24*3600)
@@ -204,7 +201,6 @@ def user_stats(df):
 
     # Display counts of gender
     
-    # Check if column Gender exists in the dataset
     if 'Gender' in df.columns:
         Gender_count = df['Gender'].value_counts().to_string()
         print("\nThe number of counts of each gender specified is given below: \n", Gender_count)
@@ -214,7 +210,6 @@ def user_stats(df):
         
     # Display earliest, most recent, and most common year of birth
     
-    # Check if the column birth year exists in the dataset
     if 'Birth Year' in df.columns:
         
         #earliest birth year

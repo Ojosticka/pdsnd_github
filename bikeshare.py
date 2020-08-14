@@ -102,21 +102,18 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # Display the most common month
-    mode_letter = df['month'].mode()[0]           
-    print("\nThe most frequent month is the month of {}".format(mode_letter))
+    # Display the most common month        
+    print("\nThe most frequent month is the month of {}".format(df['month'].mode()[0] ))
     
     # Display the most common day of weekp
-    frequent_day = df['day_of_week'].mode()[0]
-    print("\nThe most frequent day of the week is {}".format(frequent_day))
+    print("\nThe most frequent day of the week is {}".format(df['day_of_week'].mode()[0]))
     
     # Display the most common start hour
     # extract hour from the Start Time column to create an hour column
     df['hour'] = df['Start Time'].dt.hour
 
     # find the most common hour (from 0 to 23)
-    popular_hour = df['hour'].mode()[0]
-    print("\nThe most frequent start hour of bikers is: {}:00 ".format(popular_hour))
+    print("\nThe most frequent start hour of bikers is: {}:00 ".format(df['hour'].mode()[0]))
     
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -131,12 +128,10 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    popular_start_station = df['Start Station'].mode()[0]
-    print("\nThe most frequent station bikers start from is {}".format(popular_start_station))
+    print("\nThe most frequent station bikers start from is {}".format(df['Start Station'].mode()[0]))
     
     # display most commonly used end station
-    popular_end_station = df['End Station'].mode()[0]
-    print("\nThe most frequent station bikers end is {}".format(popular_end_station))
+    print("\nThe most frequent station bikers end is {}".format(df['End Station'].mode()[0]))
     
     # display most frequent combination of start station and end station trip 
     mode_start_end = df.groupby(['Start Station', 'End Station']).size().idxmax() #returns a tuple of the most common combination of start and end station 
@@ -177,13 +172,11 @@ def trip_duration_stats(df):
     # display total travel time
    
     tot_travel_time = int(df['Trip Duration'].sum())
-    
     print("\n The sum of the time travelled for each ride gives: \n", seconds_convert(tot_travel_time))
     
     # display mean travel time
     
     avg_travel_time = int(df['Trip Duration'].mean())
-
     print("\n The average travel time of a biker to end a trip is: \n", seconds_convert(avg_travel_time))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -199,15 +192,13 @@ def user_stats(df):
     start_time = time.time()
 
     # Display counts of user types
-    user_count_types = df['User Type'].value_counts().to_string()
-    print("\nThe number of each type of user is given as: \n", user_count_types)
+    print("\nThe number of each type of user is given as: \n", df['User Type'].value_counts().to_string())
 
     # Display counts of gender
     
     # Check if column Gender exists in the dataset
     if 'Gender' in df.columns:
-        Gender_count = df['Gender'].value_counts().to_string()
-        print("\nThe number of counts of each gender specified is given below: \n", Gender_count)
+        print("\nThe number of counts of each gender specified is given below: \n", df['Gender'].value_counts().to_string())
 
     else:
         print("\nWe are sorry to inform you that we dont have availaible data for the gender of our users for the city of Washington.\n")
@@ -215,19 +206,15 @@ def user_stats(df):
     # Display earliest, most recent, and most common year of birth
     
     # Check if the column birth year exists in the dataset
-    if 'Birth Year' in df.columns:
-        
+    if 'Birth Year' in df.columns:      
         #earliest birth year
-        Earliest_birth_year = int(df['Birth Year'].min())
-        print("\nThe birth year of the oldest set of people for this dataset is: \n", Earliest_birth_year)
+        print("\nThe birth year of the oldest set of people for this dataset is: \n", int(df['Birth Year'].min()))
 
         #most recent year
-        recent_birth_year = int(df['Birth Year'].max())
-        print("\nThe birth year of the youngest set of people for this dataset is: \n", recent_birth_year)
+        print("\nThe birth year of the youngest set of people for this dataset is: \n", int(df['Birth Year'].max()))
 
         #most popular birth year
-        Popular_birth_year = int(df['Birth Year'].mode()[0])
-        print("\nThe birth year of majority of our customers is: \n", Popular_birth_year)
+        print("\nThe birth year of majority of our customers is: \n", int(df['Birth Year'].mode()[0]))
 
         print("\nThis took %s seconds." % (time.time() - start_time))
         print('-'*40)

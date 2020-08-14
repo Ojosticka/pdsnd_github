@@ -105,13 +105,12 @@ The floor operator(//) gives the integer division of a division operation neglec
     Args: None
     returns: None   
 
+The code in this project was splited into two files performing different functions: 
 
-The code written at the bottom of the page:  
+*`loadfile.py` which ensures asking of the user for inputs on what he wants concerning the data.
+*`bikeshare.py` imports the loadfile python file and calculates all necessary statistics needed by the user. 
 
-`if __name__ == "__main__":`
-    `main()`
-
-This simply means the code was entirely ran on this module, and wasnt imported. For more information on this, check [this link](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)
+Doing this makes the code more readable and understandable as the filenames are descriptive enough. To understand this better, check out the scripting lesson on this [free udacity course](https://classroom.udacity.com/courses/ud1110/lessons/01465444-9f86-4b97-b1c5-2365ab00749b/concepts/a3dc7153-8f26-4ac9-b5b5-8631600c3563) on python. 
 
 
 ## References
@@ -119,4 +118,4 @@ This simply means the code was entirely ran on this module, and wasnt imported. 
 [stack overflow](https://stackoverflow.com/)
 [Pandas dataframe documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
 [Numpy documentation](https://numpy.org/doc/stable/user/basics.html)
-
+[Udacity python programming for data science Nanodegree](https://classroom.udacity.com/nanodegrees/nd104/dashboard/overview)

@@ -85,7 +85,9 @@ A breakdown of the functions used in this project and what each does is given be
 
 ..*`def seconds_convert(sec):` Converts data given in seconds to weeks, days, hours, minutes, and seconds
     Args: Takes in the seconds value to be converted from the trip_duration_stats function(int)
-    returns: The converted output of the argument given.   
+    returns: The converted output of the argument given.    
+
+    The floor operator(//) gives the integer division of a division operation neglecting every number after the decimal point while the modulo operator (%) gives the integer remainder of a division operation. For more understanding of the operators, check out [this link](https://stackoverflow.com/questions/56627393/difference-between-modulus-and-floor-division-in-numpy). 
 
 ..*`def trip_duration_stats(df):` Displays statistics on the total and average trip duration.
     Args: dataframe df

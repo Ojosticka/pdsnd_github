@@ -17,14 +17,14 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    name_of_person = input('Hello! My name is ojo, what\'s yours(letters only please), let\'s explore some US city bikeshare data!: ')
+    name_of_person = input('Hello! My name is ojo, what\'s yours(letters only please), let\'s explore some US city bikeshare data!: ').strip()
        
     print("\noh wow {}, that\'s such a beautiful name you got there\n".format(name_of_person))
             
             
     # Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:        
-        city = input("Hi {}, what city would you like to check, data is only availaible for the cities: (chicago, new york city, washington),please endeavour to choose from these options, cant choose more than one city at a time: ".format(name_of_person)).lower()
+        city = " ".join(input("Hi {}, what city would you like to check, data is only availaible for the cities: (chicago, new york city, washington),please endeavour to choose from these options, cant choose more than one city at a time: ".format(name_of_person)).lower().split())
         
         if city in CITY_DATA.keys():   
             print("\nHmmm cool choice, {} it is then\n".format(city))
@@ -34,7 +34,7 @@ def get_filters():
 
     # Get user input for month (all, january, february, ... , june)
     while True:
-        month = input("Hi {}, what month would you like to get data for? Nb: type 'all' if you want data for all the six months, if not, enter a specific  month(ranges from january to june), e.g january:  ".format(name_of_person)).lower()
+        month = input("Hi {}, what month would you like to get data for? Nb: type 'all' if you want data for all the six months, if not, enter a specific  month(ranges from january to june), e.g january:  ".format(name_of_person)).lower().strip()
         if month in months_letters or month == 'all':
                 
             if month == 'may':
@@ -47,7 +47,7 @@ def get_filters():
 
     # Get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input("{}, what day of the week are you interested in? Nb: type 'all' if you want data for all the days of the week, if not, enter a specific day(ranges from monday to sunday): ".format(name_of_person)).lower()
+        day = input("{}, what day of the week are you interested in? Nb: type 'all' if you want data for all the days of the week, if not, enter a specific day(ranges from monday to sunday): ".format(name_of_person)).lower().strip()
             
         if day in days or day == 'all':
             print("\nHmmm cool choice, {} it is then\n".format(day))
@@ -244,7 +244,7 @@ def more_info(df):
     i = 5
     while True:
             
-        answer = input("\nWould you like to observe the first few rows of the raw data of the city based on your specifications or keep viewing the next set of rows in the dataset, type 'yes' to proceed or 'no' if you are not interested: ").lower()              
+        answer = input("\nWould you like to observe the first few rows of the raw data of the city based on your specifications or keep viewing the next set of rows in the dataset, type 'yes' to proceed or 'no' if you are not interested: ").lower().strip()              
                        
         if answer == 'yes':
             print("\n", df.iloc[i-5:i])
@@ -273,8 +273,8 @@ def main():
         user_stats(df)
         more_info(df)
         
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = input('\nWould you like to restart? Enter yes or no.\n').lower().strip()
+        if restart != 'yes':
             break
 
 

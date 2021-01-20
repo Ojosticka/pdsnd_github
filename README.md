@@ -115,7 +115,7 @@ Doing this makes the code more readable and understandable as the filenames are 
 
 ## References
 
-[stack overflow](https://stackoverflow.com/)
-[Pandas dataframe documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
-[Numpy documentation](https://numpy.org/doc/stable/user/basics.html)
-[Udacity python programming for data science Nanodegree](https://classroom.udacity.com/nanodegrees/nd104/dashboard/overview)
+*[stack overflow](https://stackoverflow.com/)
+*[Pandas dataframe documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
+*[Numpy documentation](https://numpy.org/doc/stable/user/basics.html)
+*[Udacity python programming for data science Nanodegree](https://classroom.udacity.com/nanodegrees/nd104/dashboard/overview)
